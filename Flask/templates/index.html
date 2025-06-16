@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Recommendation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset some defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e64a19;
+        }
+
+        .middle-content {
+            display: flex;
+            flex-direction: row;
+            padding: 40px;
+            flex: 1;
+        }
+
+        .text {
+            width: 50%;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text h2 {
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .image {
+            width: 50%;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .middle-content {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .text, .image {
+                width: 100%;
+                padding: 0;
+            }
+
+            .text {
+                margin-bottom: 30px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .nav-buttons {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Restaurant Recommendation</h1>
+        <div class="nav-buttons">
+            <button onclick="location.href='/'">Home</button>
+            <button onclick="location.href='/recommend'">Recommend</button>
+        </div>
+    </header>
+
+    <div class="middle-content">
+        <div class="text">
+            <h2>Discover Great Restaurants Effortlessly</h2>
+            <p>
+                In today’s digital age, finding the right place to eat can be overwhelming. Our intelligent
+                Restaurant Recommendation System helps you discover highly-rated and affordable food spots based
+                on your preferences.
+            </p>
+            <p>
+                Simply enter a restaurant name, and we’ll recommend similar options based on reviews, cuisine, and cost.
+                Give it a try and explore new culinary experiences!
+            </p>
+            <h2>Start Exploring</h2>
+            <button onclick="location.href='/recommend'">Get Recommendations</button>
+        </div>
+
+        <div class="image">
+            <img src="{{ url_for('static', filename='food-4k-spdnpz7bhmx4kv2r.jpg') }}" alt="Delicious Food">
+        </div>
+    </div>
+</body>
+</html>
